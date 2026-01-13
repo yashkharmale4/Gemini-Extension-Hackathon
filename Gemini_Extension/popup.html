@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    /* 1. The main colorful background of the popup window */
+    body {
+      width: 350px;
+      min-height: 400px;
+      margin: 0;
+      padding: 20px;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      /* A nice purple-to-blue gradient */
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+    }
+
+    /* 2. The white "card" container that holds the content */
+    .card {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      width: 100%;
+    }
+
+    /* Header styling */
+    h3 {
+      margin-top: 0;
+      text-align: center;
+      color: #333;
+      font-weight: 600;
+      font-size: 22px;
+    }
+
+    /* Text input area styling */
+    textarea {
+      width: 100%;
+      height: 100px;
+      margin-bottom: 15px;
+      padding: 12px;
+      border: 2px solid #e2e8f0;
+      border-radius: 10px;
+      resize: none; /* Stops user from resizing it */
+      font-family: inherit;
+      box-sizing: border-box; /* Ensures padding doesn't break width */
+      transition: border-color 0.3s;
+    }
+
+    /* When you click in the textarea */
+    textarea:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+
+    /* Button styling */
+    button {
+      width: 100%;
+      padding: 12px;
+      /* A colorful gradient for the button too */
+      background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.1s, box-shadow 0.3s;
+    }
+
+    button:hover {
+      box-shadow: 0 5px 15px rgba(106, 17, 203, 0.4);
+    }
+
+    /* A tiny click effect */
+    button:active {
+      transform: scale(0.98);
+    }
+
+    /* Output area styling */
+    #output {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f7fafc;
+      border-radius: 10px;
+      border: 1px solid #edf2f7;
+      font-size: 14px;
+      color: #2d3748;
+      line-height: 1.5;
+      min-height: 60px; /* Ensure it's visible even empty */
+      word-wrap: break-word; /* Prevent long words breaking layout */
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h3>✨ Ask Gemini</h3>
+    <textarea id="userInput" placeholder="What's on your mind today?"></textarea>
+    <button id="sendBtn">Generate</button>
+    <div id="output">Adding color to your day...</div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
